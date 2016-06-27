@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Registrar usuario</title>
+</head>
+<body>
+	 <header>
+ <h1>Registro de usuarios</h1>
+ </header> 
+
+ <form action="registrar_usuario.php" method="post"> 
+
+	 <hr />
+	 <h3>Crea una cuenta</h3>
+
+	 <!--Nombre Usuario-->
+	 <label for="nombre">Nombre de Usuario:</label><br>
+	 <input type="text" name="username" maxlength="20" required>
+	 <br/><br/>
+
+	 <!--Password-->
+	 <label for="pass">Password:</label><br>
+	 <input type="password" name="password" maxlength="25" required>
+
+	 <br/><br/>
+	 <input type="submit" name="submit" value="Registrarme">
+	 <input type="reset" name="clear" value="Borrar">
+
+	 </form>
+
+	<hr /><br />
+
+<footer>
+ 	&copy;2016 <a href="http://utvirtual.uttab.edu.mx">utvirtual.uttab.edu.mx</a>
+</footer> 
+</body>
+</html>
