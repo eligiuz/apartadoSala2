@@ -37,6 +37,6 @@ if ($conexion->connect_errno) {
 }
 
 // Url donde estara el proyecto, debe terminar con un "/" al final
-$base_url="http://localhost:8888/apartadoSala/";
+$base_url="";
 
 ?>
