@@ -262,6 +262,7 @@ if (isset($_POST['from']))
                 });
         }(jQuery));
     </script>
+<!-- Ventana Modal para agregar un nuevo evento -->
 
 <div class="modal fade" id="add_evento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
   <div class="modal-dialog">
@@ -289,11 +290,15 @@ if (isset($_POST['from']))
 
                     <label for="tipo">Tipo de evento</label>
                     <select class="form-control" name="class" id="tipo">
-                        <option value="event-info">Informacion</option>
-                        <option value="event-success">Exito</option>
-                        <option value="event-important">Importantante</option>
-                        <option value="event-warning">Advertencia</option>
-                        <option value="event-special">Especial</option>
+                        <option value="event-videoconferencia">Videoconferencia</option>
+                        <option value="event-conferencia">Conferencia</option>
+                        <option value="event-convenio">Convenio</option>
+                        <option value="event-reunion">Reunión</option>
+                        <option value="event-pelicula">Pelicula</option>
+                        <option value="event-capacitacion">Capacitación</option>
+                        <option value="event-presentacionLibro">Presentación de Libro</option>
+                        <option value="event-mesaLectura">Mesa de Lectura</option>
+                        <option value="event-otro">Otro</option>
                     </select>
 
                     <br>

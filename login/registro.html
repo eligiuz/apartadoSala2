@@ -16,12 +16,21 @@
 
 	 <!--Nombre Usuario-->
 	 <label for="nombre">Nombre de Usuario:</label><br>
-	 <input type="text" name="username" maxlength="20" required>
+	 <input type="text" name="username" placeholder="usuario" maxlength="20" required>
 	 <br/><br/>
 
 	 <!--Password-->
 	 <label for="pass">Password:</label><br>
 	 <input type="password" name="password" maxlength="25" required>
+	<br><br>
+
+	<!-- Privilegios -->
+    <label for="privi">Privilegios</label>
+    <select class="form-control" name="privi" id="privi">
+    	<option value="1">Administrador</option>
+    	<option value="2">Usuario</option>
+    	<option value="0">Invitado</option>
+     </select>
 
 	 <br/><br/>
 	 <input type="submit" name="submit" value="Registrarme">

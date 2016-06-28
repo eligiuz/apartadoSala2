@@ -45,7 +45,39 @@
 
     // Fecha Termino
     $final=$row['final_normal'];
-
+    
+    // Clase de evento
+    switch ($row['class']) {
+        case "event-videoconferencia":
+            $clase_evento = "Videconferencia";
+            break;
+        case "event-conferencia":
+            $clase_evento = "Conferencia";
+            break;
+        case "event-convenio":
+            $clase_evento = "Convenio";
+            break;
+        case "event-reunion":
+            $clase_evento = "Reunión";
+            break;
+        case "event-pelicula":
+            $clase_evento = "Pelicula";
+            break;
+        case "event-capacitacion":
+            $clase_evento = "Capacitación";
+            break;
+        case "event-presentacionLibro":
+            $clase_evento = "Presentación de Libro";
+            break;
+        case "event-mesaLectura":
+            $clase_evento = "Mesa de Lectura";
+            break;
+        case "event-otro":
+            $clase_evento = "Otro";
+            break;
+        
+    }
+   
 // Eliminar evento
 if (isset($_POST['eliminar_evento'])) 
 {
@@ -71,6 +103,7 @@ if (isset($_POST['eliminar_evento']))
 <body>
 	 <h3><?=$titulo?></h3>
 	 <hr>
+     <p><b>Tipo de evento: </b><?=$clase_evento?></p>
      <b>Fecha inicio:</b> <?=$inicio?>
      <b>Fecha termino:</b> <?=$final?>
  	<p><?=$evento?></p>

@@ -291,22 +291,34 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-#cal-day-box .day-highlight.dh-event-important {
+#cal-day-box .day-highlight.dh-event-convenio {
   border: 1px solid #ad2121;
 }
-#cal-day-box .day-highlight.dh-event-warning {
+#cal-day-box .day-highlight.dh-event-reunion {
   border: 1px solid #e3bc08;
 }
-#cal-day-box .day-highlight.dh-event-info {
+#cal-day-box .day-highlight.dh-event-videoconferencia {
   border: 1px solid #1e90ff;
 }
 #cal-day-box .day-highlight.dh-event-inverse {
   border: 1px solid #1b1b1b;
 }
-#cal-day-box .day-highlight.dh-event-success {
+#cal-day-box .day-highlight.dh-event-conferencia {
   border: 1px solid #006400;
 }
-#cal-day-box .day-highlight.dh-event-special {
+#cal-day-box .day-highlight.dh-event-capacitacion {
+  border: 1px solid #006400;
+}
+#cal-day-box .day-highlight.dh-event-presentacionLibro {
+  border: 1px solid #006400;
+}
+#cal-day-box .day-highlight.dh-event-mesaLectura {
+  border: 1px solid #006400;
+}
+#cal-day-box .day-highlight.dh-event-otro {
+  border: 1px solid #006400;
+}
+#cal-day-box .day-highlight.dh-event-pelicula {
   background-color: #ffe6ff;
   border: 1px solid #800080;
 }
@@ -331,50 +343,78 @@
 .cal-event-list .event.pull-left {
   margin-top: 3px;
 }
-.event-important {
+.event-convenio {
   background-color: #ad2121;
 }
-.event-info {
+.event-videoconferencia {
   background-color: #1e90ff;
 }
-.event-warning {
+.event-reunion {
   background-color: #e3bc08;
 }
 .event-inverse {
   background-color: #1b1b1b;
 }
-.event-success {
+.event-conferencia {
   background-color: #006400;
 }
-.event-special {
+.event-pelicula {
   background-color: #800080;
+}
+.event-capacitacion {
+  background-color: #CCFF00;
+}
+.event-presentacionLibro {
+  background-color: #FFCCCC;
+}
+.event-mesaLectura {
+  background-color: #FF9900;
+}
+.event-otro {
+  background-color: #CC6666;
 }
 .day-highlight:hover,
 .day-highlight {
   background-color: #dddddd;
 }
-.day-highlight.dh-event-important:hover,
-.day-highlight.dh-event-important {
+.day-highlight.dh-event-convenio:hover,
+.day-highlight.dh-event-convenio {
   background-color: #fae3e3;
 }
-.day-highlight.dh-event-warning:hover,
-.day-highlight.dh-event-warning {
+.day-highlight.dh-event-reunion:hover,
+.day-highlight.dh-event-reunion {
   background-color: #fdf1ba;
 }
-.day-highlight.dh-event-info:hover,
-.day-highlight.dh-event-info {
+.day-highlight.dh-event-videoconferencia:hover,
+.day-highlight.dh-event-videoconferencia {
   background-color: #d1e8ff;
 }
 .day-highlight.dh-event-inverse:hover,
 .day-highlight.dh-event-inverse {
   background-color: #c1c1c1;
 }
-.day-highlight.dh-event-success:hover,
-.day-highlight.dh-event-success {
+.day-highlight.dh-event-conferencia:hover,
+.day-highlight.dh-event-conferencia {
   background-color: #caffca;
 }
-.day-highlight.dh-event-special:hover,
-.day-highlight.dh-event-special {
+.day-highlight.dh-event-capacitacion:hover,
+.day-highlight.dh-event-capacitacion {
+  background-color: #caffca;
+}
+.day-highlight.dh-event-presentacionLibro:hover,
+.day-highlight.dh-event-presentacionLibro {
+  background-color: #caffca;
+}
+.day-highlight.dh-event-mesaLectura:hover,
+.day-highlight.dh-event-mesaLectura {
+  background-color: #caffca;
+}
+.day-highlight.dh-event-otro:hover,
+.day-highlight.dh-event-otro {
+  background-color: #caffca;
+}
+.day-highlight.dh-event-pelicula:hover,
+.day-highlight.dh-event-pelicula {
   background-color: #ffe6ff;
 }
 .cal-row-head [class*="cal-cell"]:first-child,
