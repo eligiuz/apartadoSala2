@@ -52,6 +52,9 @@ if (isset($_POST['from']))
 
         // Recibimos los demas datos desde el form
         $titulo = evaluar($_POST['title']);
+		
+		//Recibimos los datos del responsable
+		$responsable = evaluar($_POST['responsable']);
 
         // y con la funcion evaluar
         $body   = evaluar($_POST['event']);
@@ -60,12 +63,12 @@ if (isset($_POST['from']))
         $clase  = evaluar($_POST['class']);
 
         // insertamos el evento
-        $query="INSERT INTO eventos VALUES(null,'$titulo','$body','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
+        $query="INSERT INTO eventos VALUES(null,'$titulo', '$responsable' , '$body','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
 
         // Ejecutamos nuestra sentencia sql
         $conexion->query($query); 
 
-        // Obtenemos el ultimo id insetado
+        // Obtenemos el ultimo id insertado
         $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
         $row = $im->fetch_row();  
         $id = trim($row[0]);
@@ -272,13 +275,20 @@ if (isset($_POST['from']))
       </div>
       <div class="modal-body">
         <form action="" method="post">
+                    
+                    <label for="title">Título</label>
+                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduce un título">
+                    <br>
+                    <label for="responsable">Responsable del evento</label>
+                    <input type="text" required autocomplete="off" name="responsable" class="form-control" id="responsable" placeholder="Nombre del responsable del evento">
+                    <br>
+                    
                     <label for="from">Inicio</label>
                     <div class='input-group date' id='from'>
                         <input type='text' id="from" name="from" class="form-control" readonly />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </div>
-
-                    <br>
+					<br>
 
                     <label for="to">Final</label>
                     <div class='input-group date' id='to'>
@@ -294,18 +304,14 @@ if (isset($_POST['from']))
                         <option value="event-conferencia">Conferencia</option>
                         <option value="event-convenio">Convenio</option>
                         <option value="event-reunion">Reunión</option>
-                        <option value="event-pelicula">Pelicula</option>
+                        <option value="event-pelicula">Película</option>
                         <option value="event-capacitacion">Capacitación</option>
                         <option value="event-presentacionLibro">Presentación de Libro</option>
                         <option value="event-mesaLectura">Mesa de Lectura</option>
                         <option value="event-otro">Otro</option>
                     </select>
 
-                    <br>
-
-
-                    <label for="title">Título</label>
-                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduce un título">
+                    
 
                     <br>
 
@@ -328,7 +334,7 @@ if (isset($_POST['from']))
     </script>
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-ban"></i> Cancelar</button>
           <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Agregar</button>
         </form>
     </div>

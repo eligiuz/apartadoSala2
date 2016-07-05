@@ -36,6 +36,9 @@
 
     // titulo 
     $titulo=$row['title'];
+	
+	// responsable
+	$responsable=$row['responsable'];
 
     // cuerpo
     $evento=$row['body'];
@@ -103,6 +106,7 @@ if (isset($_POST['eliminar_evento']))
 <body>
 	 <h3><?=$titulo?></h3>
 	 <hr>
+     <p><b>Responsable del evento: </b><?=$responsable?></p>
      <p><b>Tipo de evento: </b><?=$clase_evento?></p>
      <b>Fecha inicio:</b> <?=$inicio?>
      <b>Fecha termino:</b> <?=$final?>
