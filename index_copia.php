@@ -27,7 +27,55 @@ if (isset($_POST['from']))
 
         if (isset($_SESSION['id']) && $_SESSION['privilegio'] > 0 ) {
             
-           include'fechas.php';
+            $user_id = $_SESSION['id'];
+
+            // Recibimos el fecha de inicio y la fecha final desde el form
+
+            $inicio = _formatear($_POST['from']);
+            // y la formateamos con la funcion _formatear
+
+            $final  = _formatear($_POST['to']);
+
+            // Recibimos el fecha de inicio y la fecha final desde el form
+
+            $inicio_normal = $_POST['from'];
+
+            // y la formateamos con la funcion _formatear
+            $final_normal  = $_POST['to'];
+
+            // Recibimos los demas datos desde el form
+            $titulo = evaluar($_POST['title']);
+    		
+    		//Recibimos los datos del responsable
+    		$responsable_nombre = htmlentities(evaluar($_POST['responsable_nombre']));
+			$responsable_apellido = htmlentities(evaluar($_POST['responsable_apellido']));
+
+            // y con la funcion evaluar
+            $body   = htmlentities(evaluar($_POST['event']));
+
+            // reemplazamos los caracteres no permitidos
+            $clase  = htmlentities(evaluar($_POST['class']));
+
+            // insertamos el evento
+            $query="INSERT INTO eventos VALUES(null, '$user_id', '$titulo', '$responsable_nombre' , '$responsable_apellido' , '$body','','$clase','$inicio','$final','$inicio_normal','$final_normal','','','','','',0,0,0,0,0,0,0,0,'','','','','',0,'',0,0)";
+
+            // Ejecutamos nuestra sentencia sql
+            $conexion->query($query); 
+
+
+        // Obtenemos el ultimo id insertado
+        $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
+        $row = $im->fetch_row();  
+        $id = trim($row[0]);
+
+        // para generar el link del evento
+        $link = "$base_url"."descripcion_evento.php?id=$id";
+
+        // y actualizamos su link
+        $query="UPDATE eventos SET url = '$link' WHERE id = $id";
+
+        // Ejecutamos nuestra sentencia sql
+        $conexion->query($query); 
 		
 		}
 

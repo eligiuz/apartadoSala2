@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 /**
 **
 **  BY iCODEART
-**
+**Modificado Por Eligio Cachón Menéndez
 **********************************************************************
 **                      REDES SOCIALES                            ****
 **********************************************************************
@@ -38,7 +38,7 @@
     $titulo=$row['title'];
 	
 	// responsable
-	$responsable=$row['responsable'];
+	$responsable=$row['responsable_nombre'].' '.$row['responsable_apellido'];
 
     // cuerpo
     $evento=$row['body'];
@@ -82,37 +82,55 @@
     }
    
 // Eliminar evento
-if (isset($_POST['eliminar_evento'])) 
+/*if (isset($_POST['eliminar_evento'])) 
 {
     $id  = evaluar($_GET['id']);
     $sql = "DELETE FROM eventos WHERE id = $id";
     if ($conexion->query($sql)) 
     {
         echo "Evento eliminado";
+		
     }
     else
     {
         echo "El evento no se pudo eliminar";
+		
     }
-}
+}*/
  ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<title><?=$titulo?></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?=$titulo?></title>
+        
+        <link rel="stylesheet" type="text/css" href="<?=$base_url?>css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
+       
+       <link href="<?=$base_url?>css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="<?=$base_url?>css/cabecera.css"> <!-- se incluye el estilo de la cabecera -->
+        <script type="text/javascript" src="<?=$base_url?>js/es-MX.js"></script>
+        <script src="<?=$base_url?>js/jquery.min.js"></script>
+        <script src="<?=$base_url?>js/moment.js"></script>
+        <script src="<?=$base_url?>js/bootstrap.min.js"></script>
+        <script src="<?=$base_url?>js/bootstrap-datetimepicker.js"></script>
+        <link rel="stylesheet" href="<?=$base_url?>css/bootstrap-datetimepicker.min.css" />
+       <script src="<?=$base_url?>js/bootstrap-datetimepicker.es.js"></script>
+
 </head>
-<body>
+<body style="background: white;">
 	 <h3><?=$titulo?></h3>
 	 <hr>
      <p><b>Responsable del evento: </b><?=$responsable?></p>
      <p><b>Tipo de evento: </b><?=$clase_evento?></p>
      <b>Fecha inicio:</b> <?=$inicio?>
-     <b>Fecha termino:</b> <?=$final?>
- 	<p><?=$evento?></p>
-</body>
+     <b>Fecha termino:</b> <?=$final?><br><br>
+     <b>Observación y/o comentario</b>
+ 	 <p><?=$evento?></p>
+<!--<a href="tools/modificar.php?id='<?php /*?><?php echo $id?><?php */?>'"><button type="submit" class="btn btn-danger" name="eliminar_evento">Modificar</button></a>-->
+<!--</body>
 <form action="" method="post">
     <button type="submit" class="btn btn-danger" name="eliminar_evento">Eliminar</button>
-</form>
+</form>-->
 </html>

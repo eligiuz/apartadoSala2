@@ -6,7 +6,9 @@ require '../config.php';
  
  $form_pass = $_POST['password'];
  
- $hash = password_hash($form_pass, PASSWORD_DEFAULT); 
+ $hash = password_hash($form_pass, PASSWORD_DEFAULT);
+
+ $privilegio = $_POST['privi']; 
 
 // Nos conectamos a la base de datos
  $conexion = new mysqli($servidor, $usuario, $pass, $bd);
@@ -29,14 +31,14 @@ require '../config.php';
  }
  else{
 
- $query = "INSERT INTO Usuarios (nombre_usuario, password)
-           VALUES ('$_POST[username]', '$hash')";
+ $query = "INSERT INTO $tbl_name (nombre, apellido, nombre_usuario, password, privilegio)
+           VALUES ('$_POST[first_name]', '$_POST[last_name]', '$_POST[username]', '$hash', '$privilegio')";
 
  if ($conexion->query($query) === TRUE) {
  
  echo "<br />" . "<h2>" . "Usuario Creado Exitosamente!" . "</h2>";
  echo "<h4>" . "Bienvenido: " . $_POST['username'] . "</h4>" . "\n\n";
- echo "<h5>" . "Hacer Login: " . "<a href='login.html'>Login</a>" . "</h5>"; 
+ echo "<h5>" . "Hacer Login: " . "<a href='../index.php'>Login</a>" . "</h5>"; 
  }
 
  else {
