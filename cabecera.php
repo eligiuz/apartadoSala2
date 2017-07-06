@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Calendario</title>
-        
+
         <link rel="stylesheet" type="text/css" href="<?=$base_url?>css/bootstrap.min.css">
         <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
-       
+
        	<link rel="stylesheet" type="text/css" href="<?=$base_url?>css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="<?=$base_url?>css/cabecera.css"> <!-- se incluye el estilo de la cabecera -->
         <script type="text/javascript" src="<?=$base_url?>js/es-MX.js"></script>
