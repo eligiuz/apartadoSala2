@@ -3,7 +3,7 @@ session_start();
 /**
 **
 **  BY iCODEART
-**
+**	MODIFICADO POR ELIGIO CACHÓN MENÉNDEZ
 **/
 
 // Definimos nuestra zona horaria
@@ -97,7 +97,7 @@ if (isset($_POST['from']))
     <script src="<?=$base_url?>js/calendar.js"></script>
     <script type="text/javascript">
         (function($){
-                //creamos la fecha actual
+				
                 var date = new Date();
                 var yyyy = date.getFullYear().toString();
                 var mm = (date.getMonth()+1).toString().length == 1 ? "0"+(date.getMonth()+1).toString() : (date.getMonth()+1).toString();

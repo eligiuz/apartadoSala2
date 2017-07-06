@@ -25,7 +25,7 @@ if ($conexion->query($sql)->num_rows) {
     $e = $conexion->query($sql);
 
     ?>
-<div class="container">
+<div class="container table-responsive">
     <table class="table table-striped table-responsive">
     <caption><h1>Eventos</h1></caption>
         <thead class="thead-inverse">

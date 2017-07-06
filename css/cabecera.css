@@ -48,6 +48,9 @@
         border-top:0 none;
     }
 }
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
 
 /*footer*/
 

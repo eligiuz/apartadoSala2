@@ -53,7 +53,7 @@
           </ul>
         </li>
       </ul> -->
- 
+
       <ul class="nav navbar-nav navbar-right">
 
 		<?php if (isset($_SESSION['username']) && $_SESSION['privilegio'] > 0) {?>
@@ -62,14 +62,14 @@
         <li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#0073AB;" onMouseOver="this.style.color = '#fff'" onMouseOut="this.style.color = '#0073AB'"><b><?php echo $_SESSION['username']; ?></b><span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
-              
+
               <li><a href="<?=$base_url?>eventosControl.php">Control de eventos</a></li>
               <li class="divider"></li>
               <li><a href="<?=$base_url?>login/cambiar_P.php">Cambiar contraseña</a></li>
               <li class="divider"></li>
 	          <li><a href="<?=$base_url?>login/logout.php">Cerrar sesión</a></li>
 	          </ul>
-									
+
 		<?php } else { ?>
 
           <li><p class="navbar-text" style="color:#0073AB">Tienes una Cuenta?</p></li>
@@ -79,7 +79,7 @@
 				<li>
 					 <div class="row">
 							<div class="col-md-12">
-								
+
 								 <form class="form" role="form" method="post" action="login/checklogin.php" accept-charset="UTF-8" id="login-nav">
 										<div class="form-group">
 											 <label class="sr-only" for="username">Nombre de Usuario</label>
@@ -92,11 +92,11 @@
 										<div class="form-group">
 											 <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
 										</div>
-										
+
 								 </form>
 							</div>
-							<div class="bottom text-center">
-								
+              <div class="bottom text-center">
+
 							</div>
 					 </div>
 				</li>
